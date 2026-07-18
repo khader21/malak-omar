@@ -12,7 +12,7 @@
 <meta property="og:description" content="دعوة شخصية لحضور حفل زفاف عمر وملاك – السبت ٨ أغسطس ٢٠٢٦ – قاعات بيبك، عمّان" />
 <meta property="og:locale" content="ar_JO" />
 
-<link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-50 0 340 340'><rect x='-50' width='340' height='340' rx='70' fill='%23faf6ed'/><g fill='%233a2f24'><path fill-rule='evenodd' d='M172 46 C174 12 126 2 106 30 C94 48 104 68 126 72 C112 62 108 46 118 34 C132 18 160 24 160 50 Z M152 28 C138 20 124 24 118 36 C124 27 138 24 149 31 Z'/><path fill-rule='evenodd' d='M131 62 C84 80 60 122 79 166 C89 190 107 204 119 216 C109 198 96 182 90 156 C78 120 100 86 142 71 Z M126 74 C94 88 76 116 84 150 C80 114 98 88 130 76 Z'/><path fill-rule='evenodd' d='M120 192 C126 164 154 150 186 146 C182 166 182 192 170 212 C158 230 132 230 121 210 C117 202 117 198 120 192 Z M148 178 C138 182 134 194 141 203 C149 212 163 208 165 198 C167 206 160 216 149 215 C136 214 128 202 133 189 C137 180 144 177 148 178 Z'/><path d='M138 224 C128 258 112 292 82 320 C103 288 118 252 126 220 Z'/><path d='M121 212 C116 244 100 276 72 302 C92 272 105 242 108 208 Z'/></g></svg>" />
+<link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-454 -1020 1666 1666'><rect x='-454' y='-1020' width='1666' height='1666' rx='340' fill='%23faf6ed'/><g transform='scale(1,-1)'><path d="M88 -586 67 -585Q59 -498 54.5 -413.5Q50 -329 50 -237Q50 -176 53.0 -103.0Q56 -30 69.0 41.5Q82 113 110 171Q140 233 175.5 271.5Q211 310 257 338Q282 355 308.0 369.0Q334 383 351 395Q348 403 345.5 415.0Q343 427 344 432L351 452Q361 480 376.0 491.0Q391 502 419 495L487 478Q519 470 526.0 450.0Q533 430 518 404L485 347Q469 318 450.0 306.0Q431 294 411 289L303 258Q201 229 158 161Q130 118 118.5 56.0Q107 -6 105 -91Q104 -126 103.0 -173.5Q102 -221 102.5 -272.0Q103 -323 104 -370Q106 -426 102.5 -478.5Q99 -531 88 -586ZM344 432Q344 485 366 534Q379 564 397.5 590.0Q416 616 436 636Q388 648 366.0 671.0Q344 694 344 724Q344 739 353.5 762.0Q363 785 376.0 808.5Q389 832 398 850Q423 912 450.0 936.0Q477 960 513 960Q545 960 561.0 944.0Q577 928 579.0 908.0Q581 888 568 876Q544 886 516 886Q477 886 449.0 865.0Q421 844 421 809Q421 780 451.0 762.5Q481 745 518 745Q562 745 604.0 762.0Q646 779 695 809L708 797L667 729Q624 701 583.0 673.0Q542 645 515 626Q459 590 433.5 567.5Q408 545 408 522Q408 499 432 488Q432 476 418.5 461.0Q405 446 385.0 437.0Q365 428 344 432Z" fill='%238a6b44'/></g></svg>" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -114,21 +114,40 @@ section{ padding-block:clamp(56px, 10vh, 96px); }
 .divider svg{ display:block; flex:none; }
 
 .eyebrow{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
   font-family:var(--font-ui);
-  font-size:.78rem;
-  letter-spacing:.28em;
-  color:var(--taupe);
-  text-transform:uppercase;
-  margin:0 0 8px;
+  font-size:.75rem;
+  letter-spacing:.34em;
+  color:var(--gold);
+  margin:0 0 10px;
 }
+.eyebrow::before,.eyebrow::after{
+  content:"";
+  height:1px;
+  width:clamp(20px, 7vw, 44px);
+  background:linear-gradient(to var(--dir,left), var(--gold-faint), transparent);
+}
+.eyebrow::before{ --dir:right; }
 
 .section-title{
   font-family:var(--font-display);
   font-weight:400;
-  font-size:clamp(1.7rem, 6.4vw, 2.2rem);
+  font-size:clamp(1.85rem, 7vw, 2.4rem);
   color:var(--espresso);
   margin:0;
   line-height:1.6;
+}
+.section-title::after{
+  content:"";
+  display:block;
+  width:46px; height:9px;
+  margin:10px auto 0;
+  background:
+    radial-gradient(circle 2.6px at 50% 50%, var(--gold) 98%, transparent) center/9px 9px no-repeat,
+    linear-gradient(var(--gold-faint), var(--gold-faint)) center/100% 1px no-repeat;
 }
 
 /* ============================================================
@@ -174,8 +193,8 @@ section{ padding-block:clamp(56px, 10vh, 96px); }
 .hero-frame .c4{ bottom:-1px; left:-1px; border-bottom-width:2px; border-left-width:2px; }
 
 .monogram{
-  width:104px; height:148px;
-  margin-bottom:14px;
+  width:74px; height:158px;
+  margin-bottom:12px;
   animation:fadeDown 1.4s var(--ease) both;
 }
 
@@ -193,14 +212,36 @@ section{ padding-block:clamp(56px, 10vh, 96px); }
   animation:fadeDown 1.4s .15s var(--ease) both;
 }
 
+/* faint embossed watermark behind the hero */
+.hero-watermark{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  pointer-events:none;
+  opacity:.045;
+}
+.hero-watermark svg{
+  width:min(48vw, 250px);
+  height:auto;
+}
+
 .hero h1{
   font-family:var(--font-display);
   font-weight:400;
-  font-size:clamp(3rem, 15vw, 4.6rem);
+  font-size:clamp(3.2rem, 16.5vw, 5rem);
   color:var(--espresso);
-  margin:20px 0 6px;
+  margin:20px 0 4px;
   line-height:1.5;
   animation:fadeUp 1.6s .3s var(--ease) both;
+}
+
+.name-flourish{
+  display:block;
+  margin:2px auto 10px;
+  color:var(--gold);
+  animation:fadeUp 1.6s .45s var(--ease) both;
 }
 
 .hero .tagline{
@@ -229,7 +270,10 @@ section{ padding-block:clamp(56px, 10vh, 96px); }
 .scroll-hint{
   position:absolute;
   bottom:calc(26px + env(safe-area-inset-bottom));
-  right:50%; transform:translateX(50%);
+  inset-inline:0;
+  margin-inline:auto;
+  width:max-content;
+  text-align:center;
   color:var(--taupe);
   font-family:var(--font-ui);
   font-size:.75rem;
@@ -418,40 +462,44 @@ section{ padding-block:clamp(56px, 10vh, 96px); }
    ============================================================ */
 .countdown-wrap{ text-align:center; padding-top:0; }
 
+/* editorial countdown: no boxes, hairline separators */
 .countdown{
   display:grid;
   grid-template-columns:repeat(4, 1fr);
-  gap:10px;
-  max-width:420px;
-  margin:30px auto 0;
+  max-width:440px;
+  margin:32px auto 0;
+  border-block:1px solid var(--gold-faint);
+  padding-block:20px;
 }
 .count-cell{
-  border:1px solid var(--gold-faint);
-  background:rgba(255,255,255,.45);
-  padding:16px 4px 12px;
+  padding:2px 4px;
   position:relative;
 }
-.count-cell::after{
+.count-cell + .count-cell::before{
   content:"";
-  position:absolute; inset:4px;
-  border:1px solid rgba(165,133,76,.14);
-  pointer-events:none;
+  position:absolute;
+  inset-inline-start:0;
+  top:50%; transform:translateY(-50%);
+  height:64%;
+  width:1px;
+  background:linear-gradient(transparent, var(--gold-faint), transparent);
 }
 .count-num{
   display:block;
   font-family:var(--font-ui);
-  font-weight:500;
-  font-size:clamp(1.5rem, 7vw, 2rem);
+  font-weight:400;
+  font-size:clamp(1.7rem, 8vw, 2.3rem);
   color:var(--espresso);
   font-variant-numeric:tabular-nums;
-  line-height:1.3;
+  line-height:1.35;
 }
 .count-label{
   display:block;
   font-family:var(--font-ui);
-  font-size:.74rem;
-  letter-spacing:.12em;
-  color:var(--taupe);
+  font-size:.72rem;
+  letter-spacing:.22em;
+  color:var(--gold);
+  margin-top:2px;
 }
 .countdown-done{
   font-family:var(--font-display);
@@ -468,14 +516,24 @@ section{ padding-block:clamp(56px, 10vh, 96px); }
 .location-card{
   border:1px solid var(--gold-faint);
   background:var(--card);
-  padding:38px 24px 34px;
+  padding:40px 24px 36px;
   position:relative;
 }
 .location-card::after{
   content:"";
-  position:absolute; inset:7px;
-  border:1px solid rgba(165,133,76,.16);
+  position:absolute; inset:8px;
   pointer-events:none;
+  --l:var(--gold-hair);
+  background:
+    linear-gradient(var(--l),var(--l)) top right/28px 1px,
+    linear-gradient(var(--l),var(--l)) top right/1px 28px,
+    linear-gradient(var(--l),var(--l)) top left/28px 1px,
+    linear-gradient(var(--l),var(--l)) top left/1px 28px,
+    linear-gradient(var(--l),var(--l)) bottom right/28px 1px,
+    linear-gradient(var(--l),var(--l)) bottom right/1px 28px,
+    linear-gradient(var(--l),var(--l)) bottom left/28px 1px,
+    linear-gradient(var(--l),var(--l)) bottom left/1px 28px;
+  background-repeat:no-repeat;
 }
 .location-card > *{ position:relative; z-index:1; }
 
@@ -517,11 +575,13 @@ section{ padding-block:clamp(56px, 10vh, 96px); }
 .btn:focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
 
 .btn-gold{
-  background:var(--gold);
+  background:linear-gradient(135deg, #b3905f, #8a6b44);
   color:var(--ivory);
-  border:1px solid var(--gold);
+  border:1px solid rgba(138,107,68,.6);
+  letter-spacing:.02em;
+  box-shadow:0 10px 26px -14px rgba(90,68,40,.55);
 }
-.btn-gold:hover{ background:#93753f; border-color:#93753f; }
+.btn-gold:hover{ background:linear-gradient(135deg, #a5834f, #7c5f3b); }
 .btn-gold:disabled{ opacity:.65; cursor:wait; }
 
 .btn-outline{
@@ -580,9 +640,19 @@ section{ padding-block:clamp(56px, 10vh, 96px); }
 }
 .rsvp-card::after{
   content:"";
-  position:absolute; inset:7px;
-  border:1px solid rgba(165,133,76,.16);
+  position:absolute; inset:8px;
   pointer-events:none;
+  --l:var(--gold-hair);
+  background:
+    linear-gradient(var(--l),var(--l)) top right/28px 1px,
+    linear-gradient(var(--l),var(--l)) top right/1px 28px,
+    linear-gradient(var(--l),var(--l)) top left/28px 1px,
+    linear-gradient(var(--l),var(--l)) top left/1px 28px,
+    linear-gradient(var(--l),var(--l)) bottom right/28px 1px,
+    linear-gradient(var(--l),var(--l)) bottom right/1px 28px,
+    linear-gradient(var(--l),var(--l)) bottom left/28px 1px,
+    linear-gradient(var(--l),var(--l)) bottom left/1px 28px;
+  background-repeat:no-repeat;
 }
 .rsvp-card > *{ position:relative; z-index:1; }
 
@@ -786,25 +856,31 @@ footer .foot-names{
 <header class="hero">
   <div class="hero-frame" aria-hidden="true"><span class="c3"></span><span class="c4"></span></div>
 
-  <svg class="monogram" viewBox="0 0 240 340" role="img" aria-labelledby="monogramTitle" xmlns="http://www.w3.org/2000/svg">
-    <title id="monogramTitle">شعار خطّي متداخل بالحرفين ع و م</title>
-    <g fill="#3a2f24">
-      <!-- ع : bold head curl with inner vein slit -->
-      <path fill-rule="evenodd" d="M172 46 C174 12 126 2 106 30 C94 48 104 68 126 72 C112 62 108 46 118 34 C132 18 160 24 160 50 Z M152 28 C138 20 124 24 118 36 C124 27 138 24 149 31 Z"/>
-      <!-- ع : body sweep with hairline slit -->
-      <path fill-rule="evenodd" d="M131 62 C84 80 60 122 79 166 C89 190 107 204 119 216 C109 198 96 182 90 156 C78 120 100 86 142 71 Z M126 74 C94 88 76 116 84 150 C80 114 98 88 130 76 Z"/>
-      <!-- م : leaf-shaped loop with curl cutout -->
-      <path fill-rule="evenodd" d="M120 192 C126 164 154 150 186 146 C182 166 182 192 170 212 C158 230 132 230 121 210 C117 202 117 198 120 192 Z M148 178 C138 182 134 194 141 203 C149 212 163 208 165 198 C167 206 160 216 149 215 C136 214 128 202 133 189 C137 180 144 177 148 178 Z"/>
-      <!-- م : tail -->
-      <path d="M138 224 C128 258 112 292 82 320 C103 288 118 252 126 220 Z"/>
-      <!-- ع : tail -->
-      <path d="M121 212 C116 244 100 276 72 302 C92 272 105 242 108 208 Z"/>
-    </g>
+  <div class="hero-watermark" aria-hidden="true">
+    <svg viewBox="-10 -1020 778 1666" xmlns="http://www.w3.org/2000/svg">
+      <g transform="scale(1,-1)"><path d="M88 -586 67 -585Q59 -498 54.5 -413.5Q50 -329 50 -237Q50 -176 53.0 -103.0Q56 -30 69.0 41.5Q82 113 110 171Q140 233 175.5 271.5Q211 310 257 338Q282 355 308.0 369.0Q334 383 351 395Q348 403 345.5 415.0Q343 427 344 432L351 452Q361 480 376.0 491.0Q391 502 419 495L487 478Q519 470 526.0 450.0Q533 430 518 404L485 347Q469 318 450.0 306.0Q431 294 411 289L303 258Q201 229 158 161Q130 118 118.5 56.0Q107 -6 105 -91Q104 -126 103.0 -173.5Q102 -221 102.5 -272.0Q103 -323 104 -370Q106 -426 102.5 -478.5Q99 -531 88 -586ZM344 432Q344 485 366 534Q379 564 397.5 590.0Q416 616 436 636Q388 648 366.0 671.0Q344 694 344 724Q344 739 353.5 762.0Q363 785 376.0 808.5Q389 832 398 850Q423 912 450.0 936.0Q477 960 513 960Q545 960 561.0 944.0Q577 928 579.0 908.0Q581 888 568 876Q544 886 516 886Q477 886 449.0 865.0Q421 844 421 809Q421 780 451.0 762.5Q481 745 518 745Q562 745 604.0 762.0Q646 779 695 809L708 797L667 729Q624 701 583.0 673.0Q542 645 515 626Q459 590 433.5 567.5Q408 545 408 522Q408 499 432 488Q432 476 418.5 461.0Q405 446 385.0 437.0Q365 428 344 432Z" fill="#3a2f24"/></g>
+    </svg>
+  </div>
+
+  <svg class="monogram" viewBox="-10 -1020 778 1666" role="img" aria-labelledby="monogramTitle" xmlns="http://www.w3.org/2000/svg">
+    <title id="monogramTitle">مونوغرام الحرفين ع م بخط النستعليق</title>
+    <defs>
+      <linearGradient id="monoGold" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#8a6b44"/>
+        <stop offset="1" stop-color="#b79462"/>
+      </linearGradient>
+    </defs>
+    <g transform="scale(1,-1)"><path d="M88 -586 67 -585Q59 -498 54.5 -413.5Q50 -329 50 -237Q50 -176 53.0 -103.0Q56 -30 69.0 41.5Q82 113 110 171Q140 233 175.5 271.5Q211 310 257 338Q282 355 308.0 369.0Q334 383 351 395Q348 403 345.5 415.0Q343 427 344 432L351 452Q361 480 376.0 491.0Q391 502 419 495L487 478Q519 470 526.0 450.0Q533 430 518 404L485 347Q469 318 450.0 306.0Q431 294 411 289L303 258Q201 229 158 161Q130 118 118.5 56.0Q107 -6 105 -91Q104 -126 103.0 -173.5Q102 -221 102.5 -272.0Q103 -323 104 -370Q106 -426 102.5 -478.5Q99 -531 88 -586ZM344 432Q344 485 366 534Q379 564 397.5 590.0Q416 616 436 636Q388 648 366.0 671.0Q344 694 344 724Q344 739 353.5 762.0Q363 785 376.0 808.5Q389 832 398 850Q423 912 450.0 936.0Q477 960 513 960Q545 960 561.0 944.0Q577 928 579.0 908.0Q581 888 568 876Q544 886 516 886Q477 886 449.0 865.0Q421 844 421 809Q421 780 451.0 762.5Q481 745 518 745Q562 745 604.0 762.0Q646 779 695 809L708 797L667 729Q624 701 583.0 673.0Q542 645 515 626Q459 590 433.5 567.5Q408 545 408 522Q408 499 432 488Q432 476 418.5 461.0Q405 446 385.0 437.0Q365 428 344 432Z" fill="url(#monoGold)"/></g>
   </svg>
 
   <span class="badge">دعوة شخصية</span>
 
   <h1>عمر وملاك</h1>
+
+  <svg class="name-flourish" width="150" height="18" viewBox="0 0 150 18" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
+    <path d="M4 10 C34 2 60 16 75 9 C90 2 116 16 146 8" opacity=".75"/>
+    <circle cx="75" cy="9" r="2" fill="currentColor" stroke="none"/>
+  </svg>
 
   <p class="tagline">بكل الحب، يسعدنا أن تشاركونا بداية حكايتنا</p>
 
@@ -1023,6 +1099,9 @@ footer .foot-names{
       <path d="M27 2 L29.5 7 L27 12 L24.5 7 Z" fill="#a5854c" stroke="none" opacity=".8"/>
     </svg>
   </div>
+  <svg width="26" height="56" viewBox="-10 -1020 778 1666" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:block;margin:0 auto 8px;opacity:.85;">
+    <g transform="scale(1,-1)"><path d="M88 -586 67 -585Q59 -498 54.5 -413.5Q50 -329 50 -237Q50 -176 53.0 -103.0Q56 -30 69.0 41.5Q82 113 110 171Q140 233 175.5 271.5Q211 310 257 338Q282 355 308.0 369.0Q334 383 351 395Q348 403 345.5 415.0Q343 427 344 432L351 452Q361 480 376.0 491.0Q391 502 419 495L487 478Q519 470 526.0 450.0Q533 430 518 404L485 347Q469 318 450.0 306.0Q431 294 411 289L303 258Q201 229 158 161Q130 118 118.5 56.0Q107 -6 105 -91Q104 -126 103.0 -173.5Q102 -221 102.5 -272.0Q103 -323 104 -370Q106 -426 102.5 -478.5Q99 -531 88 -586ZM344 432Q344 485 366 534Q379 564 397.5 590.0Q416 616 436 636Q388 648 366.0 671.0Q344 694 344 724Q344 739 353.5 762.0Q363 785 376.0 808.5Q389 832 398 850Q423 912 450.0 936.0Q477 960 513 960Q545 960 561.0 944.0Q577 928 579.0 908.0Q581 888 568 876Q544 886 516 886Q477 886 449.0 865.0Q421 844 421 809Q421 780 451.0 762.5Q481 745 518 745Q562 745 604.0 762.0Q646 779 695 809L708 797L667 729Q624 701 583.0 673.0Q542 645 515 626Q459 590 433.5 567.5Q408 545 408 522Q408 499 432 488Q432 476 418.5 461.0Q405 446 385.0 437.0Q365 428 344 432Z" fill="#a5854c"/></g>
+  </svg>
   <span class="foot-names">عمر وملاك</span>
   ننتظر لقاءكم بفرح · السبت ٨ أغسطس ٢٠٢٦
 </footer>
